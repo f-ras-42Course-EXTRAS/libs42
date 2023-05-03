@@ -1,3 +1,3 @@
 # libft-extended
 
-Library of non-mandatory functions I created and use during my curriculum.
+Library of functions I created and use during my curriculum. Both mandatory (inserted as submodules) and non-mandatory.
