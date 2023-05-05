@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/05/05 02:17:02 by fras          ########   odam.nl          #
+#    Updated: 2023/05/05 02:27:32 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,7 @@ RM = rm -f
 find_lib_path = $(filter %/$(1), $(LIBRARY_PATHS))
 
 # Targets
-.PHONY: all clean fclean re directories updatelibs \
-	libft ft_printf gnl_lib
+.PHONY: all clean fclean re directories updatelibs
 
 all: $(NAME)
 
