@@ -6,15 +6,14 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/05/10 23:15:15 by fras          ########   odam.nl          #
+#    Updated: 2023/05/11 00:04:25 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft-extended.a
 CC = gcc
 CFLAGS = -Werror -Wextra -Wall $(INCLUDE)
-INCLUDE = -I include $(EXT_INCLUDES)
-EXT_INCLUDES = $(foreach lib,$(LIBRARY_DIR),-I lib/$(lib)/include)
+INCLUDE = -I include
 LIB_DIR = libft ft_printf gnl_lib
 LIBRARY_NAMES = libft.a libftprintf.a gnl_lib.a
 USED_LIBS = $(notdir $(shell find . -type f -name "*.a" -d 1))
@@ -27,24 +26,25 @@ OBJECTS = $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:%.c=%.o))
 RM = rm -f
 
 # Functions
-find_lib_path = $(filter %/$(1), $(LIBRARY_PATHS))
+get_lib_path = $(filter %/$(1), $(LIBRARY_PATHS))
 
 # Targets
-.PHONY: all clean fclean re directories updatelibs
+.PHONY: all clean fclean re directories updatelibs useinfo
 
 all: $(LIBRARY_NAMES) $(NAME)
 
 $(NAME): directories $(OBJECTS)
 	$(CC) $(CFLAGS) -o $@ $(OBJECTS)
-	@echo "DONE... Succesful libraries used: $(USED_LIBS) + $@"
+	@$(MAKE) useinfo
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -o $@ -c $^	
 
 # Libraries
 $(LIBRARY_NAMES):
-	$(MAKE) $(call find_lib_path,$@)
-	cp $(call find_lib_path,$@) $@
+	$(MAKE) $(call get_lib_path,$@)
+	cp $(call get_lib_path,$@) $@
+	@$(MAKE) useinfo
 
 $(LIBRARY_PATHS):
 	$(MAKE) -C $(dir $@) all
@@ -68,3 +68,7 @@ fclean: clean
 	$(RM) $(LIBRARY_NAMES) $(NAME)
 
 re: fclean all
+
+# Information
+useinfo:
+	@echo "\033[92mLibraries available: $(USED_LIBS)\033[0m"
