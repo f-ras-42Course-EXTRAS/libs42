@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/05/11 00:07:18 by fras          ########   odam.nl          #
+#    Updated: 2023/05/11 01:08:12 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJECTS = $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SOURCES:%.c=%.o))
 RM = rm -f
 
 # Functions
-get_lib_path = $(filter %/$(1), $(LIBRARY_PATHS))
+get_lib_dir = $(filter %/$(1), $(LIBRARY_PATHS))
 
 # Targets
 .PHONY: all clean fclean re directories updatelibs useinfo
@@ -42,8 +42,8 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 # Libraries
 $(LIBRARY_NAMES):
-	$(MAKE) $(call get_lib_path,$@)
-	cp $(call get_lib_path,$@) $@
+	$(MAKE) $(call get_lib_dir,$@)
+	cp $(call get_lib_dir,$@) $@
 	@$(MAKE) useinfo
 
 $(LIBRARY_PATHS):
