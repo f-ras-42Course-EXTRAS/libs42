@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/05/05 02:42:26 by fras          ########   odam.nl          #
+#    Updated: 2023/05/10 23:15:15 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,10 @@ CFLAGS = -Werror -Wextra -Wall $(INCLUDE)
 INCLUDE = -I include $(EXT_INCLUDES)
 EXT_INCLUDES = $(foreach lib,$(LIBRARY_DIR),-I lib/$(lib)/include)
 LIB_DIR = libft ft_printf gnl_lib
-LIBRARIES = libft.a libftprintf.a gnl_lib.a
+LIBRARY_NAMES = libft.a libftprintf.a gnl_lib.a
 USED_LIBS = $(notdir $(shell find . -type f -name "*.a" -d 1))
 LIBRARY_PATHS = $(addprefix lib/, $(join \
-			$(addsuffix /, $(LIB_DIR)), $(LIBRARIES)))
+			$(addsuffix /, $(LIB_DIR)), $(LIBRARY_NAMES)))
 SRC_DIR = src
 OBJ_DIR = obj
 SOURCES = $(shell find $(SRC_DIR) -type f -name "*.c")
@@ -32,7 +32,7 @@ find_lib_path = $(filter %/$(1), $(LIBRARY_PATHS))
 # Targets
 .PHONY: all clean fclean re directories updatelibs
 
-all: $(LIBRARIES) $(NAME)
+all: $(LIBRARY_NAMES) $(NAME)
 
 $(NAME): directories $(OBJECTS)
 	$(CC) $(CFLAGS) -o $@ $(OBJECTS)
@@ -42,7 +42,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -o $@ -c $^	
 
 # Libraries
-$(LIBRARIES):
+$(LIBRARY_NAMES):
 	$(MAKE) $(call find_lib_path,$@)
 	cp $(call find_lib_path,$@) $@
 
@@ -65,6 +65,6 @@ fclean: clean
 	@for lib in $(LIB_DIR); do \
 		$(MAKE) -C lib/$$lib fclean; \
 	done
-	$(RM) $(LIBRARIES) $(NAME)
+	$(RM) $(LIBRARY_NAMES) $(NAME)
 
 re: fclean all
