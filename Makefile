@@ -49,7 +49,7 @@ $(LIBRARIES):
 $(LIBRARY_PATHS):
 	$(MAKE) -C $(dir $@) all
 
-updatelibs:
+libsupdate:
 	git submodule update --init
 
 # Directories
