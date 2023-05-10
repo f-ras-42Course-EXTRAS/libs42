@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/05/11 00:04:25 by fras          ########   odam.nl          #
+#    Updated: 2023/05/11 00:07:18 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ get_lib_path = $(filter %/$(1), $(LIBRARY_PATHS))
 all: $(LIBRARY_NAMES) $(NAME)
 
 $(NAME): directories $(OBJECTS)
-	$(CC) $(CFLAGS) -o $@ $(OBJECTS)
+	ar -rcs $(NAME) $(OBJECTS)
 	@$(MAKE) useinfo
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
