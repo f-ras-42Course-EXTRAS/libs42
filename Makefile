@@ -6,13 +6,13 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/05/19 21:55:26 by fras          ########   odam.nl          #
+#    Updated: 2023/07/06 20:05:03 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftextended.a
+NAME = lib42extended.a
 CC = gcc
-CFLAGS = -Werror -Wextra -Wall $(INCLUDE)
+CFLAGS = -Werror -Wextra -Wall
 INCLUDE = -I include
 LIB_DIR = libft ft_printf gnl_lib
 LIBRARY_NAMES = libft.a libftprintf.a gnl_lib.a
@@ -40,7 +40,7 @@ $(NAME): $(OBJ_DIR) $(OBJECTS)
 $(OBJ_DIR): directories
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	$(CC) $(CFLAGS) -o $@ -c $^	
+	$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $^	
 
 # Libraries
 $(LIBRARY_NAMES):
