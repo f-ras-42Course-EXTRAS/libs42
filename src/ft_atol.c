@@ -6,11 +6,11 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/03 23:19:49 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/03 23:25:03 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/06 19:25:46 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-long	fr_atol(const char *str)
+long	ft_atol(const char *str)
 {
 	long	rtn;
 	int		i;

@@ -6,8 +6,8 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/03 23:16:43 by fras          #+#    #+#                 */
-/*   Updated: 2023/05/03 23:20:36 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/06 19:25:58 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-long	fr_atol(const char *str);
+long	ft_atol(const char *str);
