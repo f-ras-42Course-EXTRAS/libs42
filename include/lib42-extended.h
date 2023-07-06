@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/03 23:16:43 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/06 22:13:34 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/06 22:22:27 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@
 # include "libft.h"
 
 long	ft_atol(const char *str);
-bool	string_is_only_digit(char *str);
+bool	string_is_digit_only(char *str);
 
 #endif
