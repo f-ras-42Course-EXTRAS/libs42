@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/06 22:05:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/06 22:22:48 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/06 22:56:55 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ bool	string_is_digit_only(char *str)
 		return(false);
 	while (ft_isdigit(*str))
 		str++;
-	if (str == '\0')
+	if (*str == '\0')
 		return(true);
 	return(false);
 }
