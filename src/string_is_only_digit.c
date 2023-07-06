@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   lib42-extended.h                                   :+:    :+:            */
+/*   string_is_only_digit.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/05/03 23:16:43 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/06 22:13:34 by fras          ########   odam.nl         */
+/*   Created: 2023/07/06 22:05:25 by fras          #+#    #+#                 */
+/*   Updated: 2023/07/06 22:13:30 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB42_EXTENDED_H
-# define LIB42_EXTENDED_H
+#include "lib42-extended.h"
 
-# include <stdbool.h>
-# include "libft.h"
-
-long	ft_atol(const char *str);
-bool	string_is_only_digit(char *str);
-
-#endif
+bool	string_is_only_digit(char *str)
+{
+	if (!*str)
+		return(false);
+	while (ft_isdigit(*str))
+		str++;
+	if (str == '\0')
+		return(true);
+	return(false);
+}
