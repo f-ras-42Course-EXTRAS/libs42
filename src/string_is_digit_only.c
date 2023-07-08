@@ -6,11 +6,11 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/06 22:05:25 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/06 22:56:55 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/08 16:47:58 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib42-extended.h"
+#include "libftextended.h"
 
 bool	string_is_digit_only(char *str)
 {

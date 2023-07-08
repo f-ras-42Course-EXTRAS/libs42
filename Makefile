@@ -6,11 +6,11 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/05/01 18:18:49 by fras          #+#    #+#                  #
-#    Updated: 2023/07/06 20:05:03 by fras          ########   odam.nl          #
+#    Updated: 2023/07/08 16:47:37 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = lib42extended.a
+NAME = libftextended.a
 CC = gcc
 CFLAGS = -Werror -Wextra -Wall
 INCLUDE = -I include

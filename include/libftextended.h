@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   lib42-extended.h                                   :+:    :+:            */
+/*   libftextended.h                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/05/03 23:16:43 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/06 22:22:27 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/08 16:47:53 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB42_EXTENDED_H
-# define LIB42_EXTENDED_H
+#ifndef LIBFTEXTENDED_H
+# define LIBFTEXTENDED_H
 
 # include <stdbool.h>
 # include "libft.h"
